@@ -15,10 +15,7 @@ import { bootstrapCameraKit, createMediaStreamSource, Transform2D } from "@snap/
       }
     });
 
-    const stream = await navigator.mediaDevices.getUserMedia({ video: {
-      width: 1920,
-      height: 1080
-    } });
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true});
     const source = createMediaStreamSource(stream, { transform: Transform2D.MirrorX });
     await session.setSource(source);
     //await source.setRenderSize(2040,1440);
